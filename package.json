@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/ashleyy808/Mongoose-Flights#readme",
   "dependencies": {
-    "mongoose": "^5.10.13"
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13",
+    "morgan": "^1.10.0"
   }
 }
