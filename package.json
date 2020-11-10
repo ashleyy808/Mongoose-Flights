@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ashleyy808/Mongoose-Flights/issues"
   },
-  "homepage": "https://github.com/ashleyy808/Mongoose-Flights#readme"
+  "homepage": "https://github.com/ashleyy808/Mongoose-Flights#readme",
+  "dependencies": {
+    "mongoose": "^5.10.13"
+  }
 }
