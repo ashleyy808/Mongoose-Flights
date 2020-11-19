@@ -2,7 +2,9 @@
 const express = require('express');
 const port = 3000;
 
-const indexRouter = requrie('./routes/index');
+const indexRouter = require('./routes/index');
+const flightsRouter = require('./routes/flights');
+const ticketsRouter = require('./routes/tickets');
 
 const morgan = require('morgan');
 
@@ -22,9 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 
 // mount routes
 app.use('/', indexRouter);
+app.use('/flights', flightsRouter);
+app.use('/tickets', ticketsRouter); 
+ 
 
 // tell the application to listen 
 
 app.listen(port, function () {
     console.log(`Express is listening on port:${port}`); 
 });
+
