@@ -8,6 +8,7 @@
     <title>Add New Flight</title>
 </head>
 <body>
+    <h1>Add New Flight</h1>
     <form id="new-form" action="/flights" method="POST">
         <label>Airline
             <input type="text" name="airline">
@@ -21,15 +22,10 @@
         <div>
             <p>Default Departure Date: <%= Date %></p>
         </div>
+        <input type="submit"  class="btn btn-success" id="submit-new-flight" value="Add Flight">
     </form>
-    <select name="airport" id="select-destination">
-        <option value="AUS">AUS</option>
-        <option value="DAL">DAL</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-        <option value="SEA">SEA</option>
-      </select>
-      <button type="submit" form="form1" class="btn btn-success" id="submit-new-flight">Add Flight</button>
+   
+      
     <nav> 
         <a href="/flights/:id/tickets/new" <%- title === 'All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
     </nav>

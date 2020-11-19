@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Document</title>
+  <title>Flight Information</title>
 </head>
+<h1>Flight Information</h1>
 <body>
   <div id="column-center">
     <form action="/flights/ /destinations" method="POST" id="add-destination-form"></form>
@@ -23,7 +24,7 @@
   </label>
   <input type="submit" class="btn btn-success" id="destination-btn" value="Add New Destination"> 
   
-  <form id="new-form" action="/flights" method="POST">
+ <form id="new-form" action="/flights" method="POST">
     <h3 id="tickets-header">Tickets <i class="fas fa-ticket-alt"></i></h3>
     <table class="table" id="tickets-table">
       <thead>
@@ -35,16 +36,24 @@
 
           <th>Flight: </th>
       </thead>
-      <% tickets.forEach(function(ticket) { %>
+      <% if (tickets.length) { %>
+     <% tickets.forEach(function(ticket) { %>
           <tr>
               <td><%= ticket.seat %></td>
               <td><%= ticket.price %></td>
           </tr>
       <% }) %>
+        <% } else { %>
+        <tr>
+          <td><%= 'ticket is not found' %></td>
+        </tr>
+      <% } %>
+
   </table>
+
   </div>
   <a href="/flights/<%= flight._id %>/tickets/new" class="btn btn-primary btn-lg btn-block" id="new-ticket-btn">Create a new ticket</a>
+
   <a href="/tickets" <%- title === 'All Tickets' ? 'class="active"' : '' %>>ALL TICKETS</a>
-  <a href="/flights" <%- title === 'All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
 </body>
 </html>

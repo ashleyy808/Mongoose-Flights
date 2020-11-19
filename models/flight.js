@@ -40,4 +40,4 @@ const destinationSchema = new Schema({
 
 
 // export the result of compiling the schema into a model
-module.exports = mongoose.model('Flight', destinationSchema);
+module.exports = mongoose.model('Flight', flightSchema);

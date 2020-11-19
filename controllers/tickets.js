@@ -21,19 +21,19 @@ module.exports = {
   }
   
   function newTicket(req, res) {
-    res.render('tickets/new', { title: 'Add Ticket' });
+    res.render('tickets/new', { title: 'Add Ticket', flightId:req.params.id });
   }
   
   function create(req, res) {
-    req.body.nowShowing = !!req.body.nowShowing;
-    for (let key in req.body) {
-      if (req.body[key] === '') delete req.body[key];
-    }
     const ticket = new Ticket(req.body);
-    ticket.save(function(err) {
-      if (err) return res.redirect('/tickets/new');
-      console.log(flight);
-      res.redirect('/tickets');
+    ticket.save(function(err, ticket) {
+      if (err) {
+        console.log(err);
+        res.redirect('/tickets/new');}
+        else {
+          console.log(ticket);
+          res.redirect('/tickets');
+        }
     });
   }
   
@@ -46,4 +46,7 @@ module.exports = {
       });
     });
    }
+
+  
+
   

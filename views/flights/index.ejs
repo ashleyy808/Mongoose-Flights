@@ -21,7 +21,9 @@
           <% flights.forEach(function(f) { %>
             <tr>
               <td><%= f.airport %></td>
-              <td><%= f.arrival %></td>
+              <td><%= f.departs %></td>
+              <td><%= f.flightNo %></td>
+              <td><%= f.airline %></td>
               <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
             </tr>
             <% }); %>
@@ -31,7 +33,6 @@
           <a href="/flights/new" class="btn btn-primary btn-lg btn-block">Create New Flight</a>
       </div>
     <nav>
-        <a href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>>ADD FLIGHT</a>
         <a href="/flights">See All Flights</a>
     </nav>
 </body>

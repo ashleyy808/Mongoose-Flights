@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ticket</title>
+</head>
+<body>
+   <h1>New Ticket</h1> 
+   <form action="/flights/<%= flightId %>/tickets" method="POST" id="ticket-create">
+        <label> Seat
+            <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+        </label><br>
+        <br>
+        <label>Price
+            <input type="text" name="price">
+        </label><br>
+        <br>
+        <button type="submit" form="ticket-create" class="btn btn-success">Create Ticket</button>
+   </form>
+</body>
+</html>

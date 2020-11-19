@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 // mount routes
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
-app.use('/tickets', ticketsRouter); 
+app.use('/', ticketsRouter); 
  
 
 // tell the application to listen 
